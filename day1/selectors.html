@@ -57,6 +57,7 @@
 		<h1>Welcome to JQuery Course</h1>
 	</header>
 	<section class="container1">
+		<button class="btn">click</button>
 		<div class="red">
 			<p class="cyan">Hello Ahmed</p>	
 		</div>
@@ -139,7 +140,7 @@
 <script>
 
 						//section 1
-
+$(".btn").click(function(){
 	var divColor=['red','blue','green'];
 	$(".container1 div").each(function(index){
 		$(this).css('background', divColor[index]);
@@ -149,6 +150,8 @@
 	$(".container1 p").each(function(index){
 		$(this).css('color', pColor[index]);
 	});
+})
+	
 
 					//section 2
 	
@@ -185,7 +188,7 @@
 						//section 5
 
 	$(".container5 ul li:nth-child(2)").css("font-style","italic");
-	$(".container5 ul li ol li").next().css("color","red");
+	$(".container5 ul li ol li").next().next().css("color","red");
 
 </script>
 	
