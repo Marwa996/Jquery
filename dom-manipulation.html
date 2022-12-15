@@ -82,9 +82,16 @@
 		$(".pink").before("<p class='yellow'>Yellow</p>"); //add yellow p before pink p
 
 							//section 2
-		// anchors={""}
-		// $(".container2 p").replaceWith("<a href='http://'+")				
+		$(".container2 p").each(function(index){
+			var con=$(this).text();
+			$(this).replaceWith("<a href='#'>"+con+"</a>");
+		});
 
+		$(".container2 a").each(function(index){
+			var con=$(this).text();
+			$(this).attr("href","http://"+con);
+		});
+		
 							//section 3
 
 		$(".container3 img").wrap("<figure></figure>"); //add figure element to img

@@ -157,19 +157,35 @@
      this.textContent = "GOOGLE"}
 	});
 
-	// $(".container2 a").each(function(){
-	// 	console.log(this.filter("[href]$='org'"));
+	$(".container2 a").each(function(){
+		if($(this).attr("href").endsWith("org")){
+			this.textContent="IEEE"}
+	})
+	$(".container2 a").each(function(){
+		if($(this).attr("href").startsWith("https")){
+			this.textContent="Facebook";}
+	});
+	$(".container2 a").each(function(){
+		if($(this).attr("href").startsWith("https")){
+			this.textContent +=" Official Website";}
+	});
 
-	// })
-	// $(".container2 a").each(function(){
-	// 	console.log( $("a[href$='org']"));
-    //   $("a[href$='org']").textContent="IEEE"
-	// });
 
 						//section 3
 
-	$(".container4 figure img: nth-child(1)").attr("src","./img/orange.png");
+	$(".container3 figure:eq(2) img").attr("src","./img/orange.png");
+	$(".container3 figure:eq(2) figcaption").text("fig.3 - Orange Juice");
 
+						//section 4
+	
+	$(".container4 tr .my-name").attr("style","color:blue");
+	$(".container4 table tr td:odd").attr("style","background:pink");
+	$(".container4 tr:last-child td:eq(1)").css("color","blue");
+
+						//section 5
+
+	$(".container5 ul li:nth-child(2)").css("font-style","italic");
+	$(".container5 ul li ol li").next().css("color","red");
 
 </script>
 	
