@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+            *{
+                margin:0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .container1{
+                width:200px;
+                height:100px;
+                margin:0 auto;
+                background-color: bisque;
+                color:black;
+            }
+            .container2{
+                width:100px;
+                height:200px;
+                margin:0 auto;
+                background-color:blue;
+                color:black;
+            }
+            button{
+                margin:20px 20px;
+                width:60px;
+                height:30px;
+            }
+		</style>
+		<!-- <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+		<script type="text/javascript" src="js/box-animator.js"></script> -->
+	</head>
+	<body>
+        <button id="btn1">Center</button>
+        <div class="container1"></div>
+        <div class="container2"></div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script>
+
+            $.fn.center=function(index){
+                var z=$.extend({
+                    zIndex:"0",
+                },
+                index);
+                console.log($(this).css("z-index"));
+                return $(this).css({
+                        zIndex:z.zIndex,
+                        position:"absolute",
+                        left: ($(window).width()-$(this).width())/2,
+                        top: ($(window).height()-$(this).height())/2, 
+                });
+            };
+            
+           
+            $("#btn1").click(function () {
+              $('.container1').center(40);
+              $('.container2').center();
+            });
+
+        </script>
+
+	</body>
+    </html>
